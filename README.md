@@ -1,4 +1,5 @@
-🌟 Project Overview
+🌟OVERVIEW
+
 The University Course & Enrollment Management System is a console-based Python application that:
 
 📚 Manages university courses
@@ -16,12 +17,17 @@ This project models courses as a Directed Graph and uses Depth First Search (DFS
 TECHNICAL DESIGN
 
 Graph Representation
-Each course is represented as a node
-Each prerequisite is represented as a directed edge
-The system maintains a Directed Acyclic Graph (DAG)
+
+> Each course is represented as a node
+
+> Each prerequisite is represented as a directed edge
+
+> The system maintains a Directed Acyclic Graph (DAG)
 
 Data structures used:
+
 courses = {}          # course_id → course_name
+
 prerequisites = {}    # course_id → set of prerequisite_ids
 
 
@@ -37,21 +43,30 @@ CORE ALGORITHMS
 
 1. Cycle Detection (Iterative DFS)
 Before adding a prerequisite, the system performs an iterative DFS traversal to ensure no circular dependency is introduced.
+
 Time Complexity:
 
 O(V + E)
+
 Where:
+
 V = number of courses
+
 E = number of prerequisite relationships
+
 This ensures the graph always remains acyclic.
 
 2. Prerequisite Expansion
+
 The system computes the full dependency chain (direct + indirect prerequisites) using DFS traversal.
 Example:
 
 CS301 → CS201 → CS101
+
 Calling:
+
 list_prerequisites("CS301")
+
 Returns:
 
 ["CS101", "CS201"]
@@ -81,6 +96,7 @@ Enrollment eligibility is verified by:
 ✔ Handles invalid menu selections
 
 ✔ Handles type safety checks
+
 
 
 🔮 FUTURE IMPROVEMENTS
